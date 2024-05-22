@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    {{!-- header --}}
+    {{>header}}
+    {{!-- Menu --}}
+    {{>menu}}
+
+
+    <div class="px-4 my-4 space-y-2">
+
+        <h1 class="font-bold text-xl">History</h1>
+   <div class="p-4 border-2 border-blue-800 space-y-2">
+    {{#if findhistory.length}}
+        {{#each findhistory}}
+            <div>
+                <p>to account: {{accnumber}}</p>
+                <p>date: {{date}}</p>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No data available</p>
+    {{/if}}
+    {{#else}}
+    <p>No history founds</p>
+    {{/else}}
+</div>
+
+
+
+    </div>
+
+
+
+
+
+    {{!-- footer --}}
+    {{>footer}}
+
+
+
+</body>
+
+</html>

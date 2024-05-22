@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    {{!-- header --}}
+    {{>header}}
+    {{!-- Menu --}}
+    {{>menu}}
+
+
+    <div class="px-4 my-4 space-y-2">
+                <h1>{{Message}}</h1>
+        <h1 class="font-bold text-xl">Withdraw</h1>
+        <p>Enter Phone Number to get withdraw</p>
+        <form action="/getwithdraw" enctype="application/x-www-form-urlencoded" method="post" class="flex flex-col space-y-4">
+            <input type="number" name="number" required class="outline-none border-2 border-gray-500 rounded py-2 px-4">
+            <input type="number" name="ammount" placeholder="enter the ammount " required class="outline-none border-2 border-gray-500 rounded py-2 px-4" >
+            <div>
+
+            <p>you will receive your money withn 48 hours</p>
+            <button type="submit" class="px-4 py-2 bg-blue-500 text-white font-semibold mb-28">Request Withdraw</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+
+    {{!-- footer --}}
+    {{>footer}}
+
+
+
+</body>
+
+</html>

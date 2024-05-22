@@ -1,0 +1,63 @@
+<div class="fixed bottom-0 flex justify-between w-full px-8  border-t-2 border-blue-400 p-4 bg-white z-10">
+    <div>
+
+    <a href="/user"><i class="fas fa-home fa-3x text-blue-800 hover:text-blue-400"></i>
+    <p class="text-center font-bold">Home</p>
+    </a>
+    </div>
+
+
+   <div>
+    <a href="/user">
+    <i class="far fa-file-alt fa-3x text-blue-800 hover:text-blue-400"></i>
+    <p class="text-center font-bold">Invest</p>
+    </a>
+    </div>
+   <div class="flex flex-col" id="copyButton">
+    
+    <i class="fas fa-share fa-3x text-blue-800 hover:text-blue-400"></i>
+    <button id="copyButton">invite</button>
+    
+    </div>
+
+   {{!-- <div>
+    <a href="/team">
+    <i class="fas fa-server fa-3x text-blue-800 hover:text-blue-400"></i>
+    <p class="text-center font-bold">Team</p>
+    </a>
+    </div> --}}
+   <div>
+    <a href="/Profile">
+    <i class="fas fa-user fa-3x text-blue-800 hover:text-blue-400"></i>
+    <p class="text-center font-bold">Profile</p>
+    </a>
+    </div>
+
+</div>
+
+
+
+  <script>
+    document.getElementById('copyButton').addEventListener('click', function() {
+      // Get the current URL
+      var currentUrl = "https://omegaassigment.com/";
+
+      // Create a temporary input element
+      var tempInput = document.createElement('input');
+      tempInput.setAttribute('value', currentUrl);
+      document.body.appendChild(tempInput);
+
+      // Select the text in the input element
+      tempInput.select();
+      tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+      // Copy the text to the clipboard
+      document.execCommand('copy');
+
+      // Remove the temporary input element
+      document.body.removeChild(tempInput);
+
+      // Alert or notify the user that the URL has been copied
+      alert('URL copied to clipboard: ' + currentUrl);
+    });
+  </script>

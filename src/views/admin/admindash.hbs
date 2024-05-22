@@ -1,0 +1,51 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+</head>
+
+<body>
+
+    <div class="w-full text-center">
+        <h1 class="font-bold text-blue-800 text-3xl">Admin Panel</h1>
+    </div>
+    {{!-- <div class="w-full text-center py-4">
+        <h1>Total Ammount  <br>{{totalBalance}}</h1>
+    </div> --}}
+
+     <div class="text-center p-4">
+            <h1>Total income: {{income}}</h1>
+        </div>
+    <div class="px-2 py-4 bg-gray-200 flex justify-between space-y-4">
+        <div class="hidden"></div>
+        <a href="/accounts" class="bg-white p-4 font-semibold  hover:bg-black hover:text-white duration-100">Accounts Requests</a>
+        <a href="/payments" class="bg-white p-4 font-semibold  hover:bg-black hover:text-white duration-100">Payment Requests</a>
+
+    </div>
+  <div class="px-2 py-4 bg-gray-200 flex justify-between space-y-4">
+        <div class="hidden"></div>
+        <a href="/donepayments" class="bg-white p-4 font-semibold  hover:bg-black hover:text-white duration-100">Done Payments </a>
+
+    </div>
+
+<div class="text-center text-xl font-bold space-y-4">
+    <h1>Assign new topic</h1>
+    <form action="/assigntopic" enctype="application/x-www-form-urlencoded" method="post" class="flex flex-col space-y-2">
+        <input type="text" name="topic" class="outline-none border-2 border-gray-700 px-2 py-1" placeholder="enter topic name" id="">
+        <button type="submit" class="py-2 px-4 bg-black text-white hover:bg-gray-900 w-fit">submit</button>
+    </form>
+</div>
+
+
+<div class="mt-64 py-4 bg-gray-300 text-center">
+    <a href="/logout" class="text-xl font-semibold  ">Logout</a>
+</div>
+
+
+
+</body>
+
+</html>

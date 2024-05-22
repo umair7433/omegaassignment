@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    {{!-- header --}}
+    {{>header}}
+    {{!-- Menu --}}
+   {{>menu}}
+
+
+    <div class="px-4 my-4">
+        <h1>Assigment topic</h1>
+                    <h1 class="font-bold text-xl">{{topic}}</h1>
+    </div>
+
+    <form action="/uploadassigment" class="flex space-y-2 flex-col px-4 mb-28">
+        <input type="file" >
+        <button class="px-4 py-2 bg-blue-600 text-white w-fit">Submit</button>
+    </form>
+          
+
+
+    {{!-- footer --}}
+    {{>footer}}
+
+
+    
+</body>
+
+</html>

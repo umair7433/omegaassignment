@@ -1,0 +1,123 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    {{!-- header --}}
+    {{>header}}
+
+    {{!-- Menu --}}
+   {{>menu}}
+
+    {{!-- packages --}}
+    <div class="px-4  h-full mt-2 mb-4 pb-8   space-y-4">
+        <a href="/user" class="text-white bg-blue-800 px-4 py-2 rounded hover:bg-blue-400 ">GO back</a>
+
+        <p class="text-3xl font-bold">Package Details</p>
+        <form action="/buypackage" enctype="application/x-www-form-urlencoded" method="post">
+
+            <div class="flex flex-col">
+                <h2 class="font-semibold text-2xl">package name: <span id="packagename" class=" font-bold"></span></h2>
+                <p class="text-xl">investment: <span id="investment" class=" font-bold"></span></p>
+                <p class="text-xl">profit per Assigment: <span id="profit" class=" font-bold"></span></p>
+                <p class="text-xl ">Validitiy: <span class=" font-bold">30 Days</span></p>
+                <p class="text-xl ">Daily Assigment need to submit before 10:00 PM</p>
+            </div>
+            <div class="p-4 border-blue-600 rounded border-2 my-4 space-y-2">
+                <p>Transfer <span id="invest" class=" font-bold"></span> to This </p>
+                <div>
+                    <p class="font-bold">Eaisypaisa</p>
+                <p class="text-xl font-semibold"> Account holder Name: Muhammad umair </p>
+                <p> Account: 03278148935
+</p>
+                </div>
+                <div>
+                    <p> enter your number form which you transfer money
+                    </p>
+                    <P id="hiddenpackagename"></P> 
+                    
+                    
+                    <input type="number" placeholder="0302112233" name="buyerphone"
+                        required class="outline-none border border-gray-700 rounded px-2 py-1">
+                        <div class="my-2">
+                            <p>Upload payment screen short</p>
+                        <input type="file" class="my-2">
+                        </div>
+
+                </div>
+            </div>
+            <p>click on Buy button to by package and wait for our approval </p>
+
+
+
+                    <input type="text" name="hprofit" hidden id="hprofit">
+                    <input type="text" name="hpackage" hidden id="hpackage">
+                    <input type="text" name="hinvest" hidden id="hinvest">
+            <button type="submit"
+                class="px-4 py-2 text-blue-800 border-2 border-blue-800 rounded hover:text-white hover:bg-blue-800">Buy</button>
+
+        </form>
+
+        <p>wait for 48 hour to check and approve your account </p>
+    
+
+    </div>
+
+
+    {{!-- footer --}}
+    {{>footer}}
+
+    <script>
+        function showPackageDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const packagename = urlParams.get('level');
+            const investment = urlParams.get('Investment');
+            const Profit = urlParams.get('profit');
+
+const hprofit=Profit
+const hpackage=packagename
+const hinvest=investment
+
+            document.getElementById('profit').innerHTML = Profit;
+            document.getElementById('profit').value = Profit;
+
+
+
+            document.getElementById('investment').innerHTML = investment;
+            document.getElementById('investment').value = investment;
+
+
+            document.getElementById('packagename').innerHTML = packagename;
+            document.getElementById('packagename').value = packagename;
+
+
+
+            document.getElementById("invest").innerHTML = investment
+
+                    
+
+                    document.getElementById("hprofit").value=hprofit
+                    document.getElementById("hpackage").value=hpackage
+                    document.getElementById("hinvest").value=hinvest
+
+        }
+
+
+
+        console.log("data")
+        // Call showPackageDetails when the page loads
+        showPackageDetails();
+    </script>
+
+</body>
+
+</html>
